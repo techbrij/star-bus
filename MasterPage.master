@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">   
+    <title>Untitled Page</title>
+    <link href="css/Style.css" rel="stylesheet" type="text/css" media="all" />   
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <!--header starts -->
+        <div id="header">
+            <div id="logo">
+                <img  src="~/Images/logo.gif" runat="server" /></div>
+            <div id="logoright">
+                <div id="topbar1" style="float: right">
+                    <div class="empty" style="padding-top:3px; padding-right: 10px; background: #f1f1f1; height: 25px">
+                      <a id="A1" href="~/Agent_list.aspx" runat="server">Agents</a>|&nbsp; <a href="~/AboutUs.aspx" runat="server">About Us</a>|&nbsp; <a id="A2" href="~/Faq.aspx" runat="server" >FAQ</a>|&nbsp; <a id="A9" href="~/Feedback.aspx" runat="server">Feedback</a>|&nbsp;
+                        <a href="~/contactus.aspx" runat="server">Contact Us</a></div>
+                    <div class="empty" style="background: #f1f1f1">
+                    
+                        <img height="25" alt="" src="~/Images/top_curve2.gif" width="32"  runat="server" /></div>
+                    <div class="empty" style="width: auto; height: 25px; text-align: center">
+                    </div>
+                </div>
+                <div class="empty" style="float: right; margin: 9px 0px 8px; ">
+                    <img height="56" alt="" src="~/Images/paper.gif" width="286"  runat="server" /><asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" 
+                            ShowStartingNode="False" />
+                            </div>
+                <div id="navigation"> 
+                <div>
+                <asp:Menu ID="MainMenu" runat="server" Orientation="Horizontal" MaximumDynamicDisplayLevels="0"
+                DataSourceID="SiteMapDataSource1" DynamicEnableDefaultPopOutImage="False" StaticEnableDefaultPopOutImage="False">
+                <StaticMenuStyle CssClass="menu" />
+                <StaticMenuItemStyle CssClass="menuItem" />
+                <StaticSelectedStyle CssClass="menuSelectedItem" />
+                <DynamicMenuStyle CssClass="menuPopup" />
+                <DynamicMenuItemStyle CssClass="menuPopupItem" Font-Strikeout="False" />
+                <DynamicHoverStyle CssClass="menuPopupItem" />
+                <StaticHoverStyle CssClass="menuItemHover" />
+            </asp:Menu>
+                </div>
+            <div id="submenu" runat="server">
+            <ul id="submenulist">
+            <li><a id="home" href="~/AdminArea/HomeForAdmin.aspx" runat="server">Basic Info</a></li>
+             <li><a id="A3" href="~/AdminArea/CreateAgent.aspx" runat="server">Create Agent</a></li>
+              <li><a id="A4" href="~/AdminArea/All_Agents_info.aspx" runat="server">Agent List</a></li>
+               <li><a id="A5" href="~/AdminArea/Deposit.aspx" runat="server">Deposite</a></li>
+               <li><a id="A6" href="~/AdminArea/Agent_search.aspx" runat="server">Search Agent</a></li>
+              <li><a id="A7" href="~/AdminArea/Bus_list.aspx" runat="server">Bus List</a></li>
+               <li><a id="A8" href="~/AdminArea/feedback_list.aspx" runat="server">FeedBack List</a></li>
+            </ul>
+            </div>
+             </div>
+            </div>
+        </div>
+        <div>
+            <table style="width: 100%;">
+                <tr>
+                    <td colspan="3">
+                        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                            <asp:UpdatePanel ID="up12" runat="server">
+                            <ContentTemplate>
+                                <table cellspacing="0" cellpadding="0" width="100%" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-header" style="height: 25px;" valign="middle"
+                                                align="left" width="600">
+                                                Welcome <asp:LoginName ID="LoginName1" runat="server" />, Rs.<asp:Literal ID="litbal" runat="server" />
+                                            </td>
+                                            <td class="border-header-date" style="height: 25px" valign="middle" align="left"
+                                                width="200">
+                                                <asp:Literal ID="litdate" runat="server"></asp:Literal>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <asp:ContentPlaceHolder ID="content1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder4" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+            <div id="footer">
+                <div id="footerlinks">
+                    <div style="float: left">
+                       Copyright © 2010, All rights reserved &nbsp; <span class="orange11">l</span> &nbsp; <a href="~/Privacypolicy.aspx"  runat="server">Privacy policy</a>&nbsp; <span class="orange11">
+                            l</span> &nbsp; <a href="~/TermsandConditions.aspx"  runat="server">Terms and conditions</a>&nbsp;
+                        <br />
+                    </div>
+                    <div style="float: right; text-align: right">
+                       <asp:Label ID="lblCreatedBy" runat="server"></asp:Label>  
+                    </div>                    
+                </div>                
+            <!--footer ends -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            </div> 
+    </form>
+</body>
+</html>

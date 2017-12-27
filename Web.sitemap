@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="" roles="*" >
+        <siteMapNode url="index.aspx" title="Home"  description="" />        
+      <siteMapNode url="Status.aspx" title="Status"  description=""  /><!--Anonymous user only-->
+      <siteMapNode url="Search_byuser.aspx" title="Search"  description="" />      
+      <!--Secret\MasterPage.master-->
+      <siteMapNode url="Secret/Selectseat.aspx" title="Book Ticket"  description="" roles="Agent,admin"/>
+      <siteMapNode url="Secret/Cancelticket.aspx" title="Cancel Ticket"  description="" roles="Agent,admin"/>
+      <siteMapNode url="Secret/Change_pass.aspx" title="Settings"  description="" roles="Agent,admin" />     
+      
+        <!--AdminArea\AgentMasterPage.master-->
+      
+      <siteMapNode url="login.aspx" title="Login"  description=""   />
+      <siteMapNode url="logout.aspx" title="Logout"  description=""  />
+    </siteMapNode>
+</siteMap>
